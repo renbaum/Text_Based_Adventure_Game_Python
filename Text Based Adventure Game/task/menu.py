@@ -1,4 +1,5 @@
-
+from Player import Player
+from Story import StoryHandling
 
 class MainMenu:
     def __init__(self):
@@ -26,6 +27,14 @@ class MainMenu:
             match choice:
                 case "1" | "start":
                     print("Starting a new Game")
+                    player = Player()
+                    player.dummy()
+#                    player.init_player()
+                    story = StoryHandling(player)
+                    story.start_story()
+
+
+                    return False
                 case "2" | "load":
                     print("Loading your progress")
                 case "3" | "quit":
